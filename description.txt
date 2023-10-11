@@ -1,0 +1,17 @@
+prefix:
+    Warding = 65;
+    Menacing = 72;
+    Ruthless = 57;
+    Godly = 59;
+    Legendary = 81;
+    Mythical = 83;
+
+commands:
+
+    /cheat modifier 65
+    
+    /cheat modifier-i 65
+    
+    /cheat time 60
+    
+    /cheat stack 1

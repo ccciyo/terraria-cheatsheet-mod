@@ -1,0 +1,3 @@
+displayName = CheatSheet
+author = ccciyo
+version = 0.1
