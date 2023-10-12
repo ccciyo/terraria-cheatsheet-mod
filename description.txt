@@ -8,10 +8,12 @@ prefix:
 
 commands:
 
-    /cheat modifier 65
-    
-    /cheat modifier-i 65
-    
-    /cheat time 60
-    
-    /cheat stack 1
+/cheat modifier 65
+
+/cheat modifier-i 65
+
+/cheat time 60
+
+/cheat stack 1
+
+/cheat spawn 600 5

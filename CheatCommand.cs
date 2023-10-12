@@ -30,6 +30,9 @@ public class CheatCommand : ModCommand
                 case "time":
                     ChangeTime(val, player);
                     break;
+                case "spawn":
+                    ChangeSpawn(args[1], args[2], player);
+                    break;
             }
         }
         catch
@@ -38,9 +41,15 @@ public class CheatCommand : ModCommand
         }
     }
 
-    private void ChangeTime(int val, Player player)
+    private static void ChangeSpawn(string spawnRate, string maxSpawn, Player player)
     {
-        CheatConfig.timeRate = val;
+        CheatConfig.SpawnRate = Convert.ToInt32(spawnRate);
+        CheatConfig.MaxSpawns = Convert.ToInt32(maxSpawn);
+    }
+
+    private static void ChangeTime(int val, Player player)
+    {
+        CheatConfig.TimeRate = val;
     }
 
     private static void ChangeInventoryItemModifier(int val, Player player)

@@ -1,7 +1,10 @@
-﻿namespace CheatSheet;
+﻿using Terraria;
 
-public class CheatConfig
+namespace CheatSheet;
+
+public static class CheatConfig
 {
-    public static int timeRate = 1;
-
+    public static int TimeRate = 1;
+    public static int SpawnRate = 600;
+    public static int MaxSpawns = 5;
 }
