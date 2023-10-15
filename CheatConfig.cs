@@ -5,6 +5,7 @@ namespace CheatSheet;
 public static class CheatConfig
 {
     public static int TimeRate = 1;
-    public static int SpawnRate = 600;
-    public static int MaxSpawns = 5;
+    public static float SpawnRateMultiplier = 1;
+    public static float MaxSpawnsMultiplier = 1;
+    public static bool canShovelKillWall = false;
 }

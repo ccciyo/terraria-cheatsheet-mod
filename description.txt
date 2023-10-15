@@ -1,19 +1,24 @@
-prefix:
-    Warding = 65;
-    Menacing = 72;
-    Ruthless = 57;
-    Godly = 59;
-    Legendary = 81;
-    Mythical = 83;
+
 
 commands:
 
-/cheat modifier 65
+/cheat modifier 65 Warding
+/cheat modifier 57 Ruthless
+/cheat modifier 72 Menacing
+/cheat modifier 80 Violent
 
-/cheat modifier-i 65
+/cheat modifier-i 59   Godly
+/cheat modifier-i 81   Legendary
+/cheat modifier-i 83   Mythical
+
+/cheat id 4711
+
 
 /cheat time 60
 
-/cheat stack 1
+/cheat stack 900
 
-/cheat spawn 600 5
+/cheat spawn 1 1
+/cheat spawn 0.2 2
+
+/cheat wall 1

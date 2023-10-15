@@ -15,23 +15,29 @@ public class CheatCommand : ModCommand
         try
         {
             var player = caller.Player;
-            var val = Convert.ToInt32(args[1]);
+
             switch (args[0])
             {
                 case "stack":
-                    ModifyItemStack(val, player);
+                    ModifyItemStack(Convert.ToInt32(args[1]), player);
+                    break;
+                case "id":
+                    ModifyItemId(Convert.ToInt32(args[1]), player);
                     break;
                 case "modifier":
-                    ChangeItemModifier(val, player);
+                    ChangeItemModifier(Convert.ToInt32(args[1]), player);
                     break;
                 case "modifier-i":
-                    ChangeInventoryItemModifier(val, player);
+                    ChangeInventoryItemModifier(Convert.ToInt32(args[1]), player);
                     break;
                 case "time":
-                    ChangeTime(val, player);
+                    ChangeTime(Convert.ToInt32(args[1]), player);
                     break;
                 case "spawn":
                     ChangeSpawn(args[1], args[2], player);
+                    break;
+                case "wall":
+                    ChangeShovelCanKillWall(Convert.ToInt32(args[1]), player);
                     break;
             }
         }
@@ -41,10 +47,20 @@ public class CheatCommand : ModCommand
         }
     }
 
+    private void ChangeShovelCanKillWall(int val, Player player)
+    {
+        CheatConfig.canShovelKillWall = val > 0;
+    }
+
+    private void ModifyItemId(int val, Player player)
+    {
+        if (player.inventory[19] != null && val > 0) player.inventory[19].netID = val;
+    }
+
     private static void ChangeSpawn(string spawnRate, string maxSpawn, Player player)
     {
-        CheatConfig.SpawnRate = Convert.ToInt32(spawnRate);
-        CheatConfig.MaxSpawns = Convert.ToInt32(maxSpawn);
+        CheatConfig.SpawnRateMultiplier = float.Parse(spawnRate);
+        CheatConfig.MaxSpawnsMultiplier = float.Parse(maxSpawn);
     }
 
     private static void ChangeTime(int val, Player player)

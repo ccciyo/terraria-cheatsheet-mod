@@ -7,7 +7,7 @@ public class CheatGlobalNpc : GlobalNPC
 {
     public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
     {
-        spawnRate = CheatConfig.SpawnRate;
-        maxSpawns = CheatConfig.MaxSpawns;
+        spawnRate = (int)(spawnRate * CheatConfig.SpawnRateMultiplier);
+        maxSpawns = (int)(maxSpawns * CheatConfig.MaxSpawnsMultiplier);
     }
 }
