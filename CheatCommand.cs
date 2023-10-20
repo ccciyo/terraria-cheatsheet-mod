@@ -39,12 +39,21 @@ public class CheatCommand : ModCommand
                 case "wall":
                     ChangeShovelCanKillWall(Convert.ToInt32(args[1]), player);
                     break;
+                case "shovel":
+                    ChangeShovelRange(Convert.ToInt32(args[1]), Convert.ToInt32(args[2]), player);
+                    break;
             }
         }
         catch
         {
             // ignored
         }
+    }
+
+    private void ChangeShovelRange(int x, int y, Player player)
+    {
+        CheatConfig.shovelX = x;
+        CheatConfig.shovelY = y;
     }
 
     private void ChangeShovelCanKillWall(int val, Player player)
@@ -54,7 +63,11 @@ public class CheatCommand : ModCommand
 
     private void ModifyItemId(int val, Player player)
     {
-        if (player.inventory[19] != null && val > 0) player.inventory[19].netID = val;
+        if (player.inventory[19] != null && val > 0)
+        {
+            player.inventory[19].netID = val;
+            player.inventory[19].Refresh(false);
+        }
     }
 
     private static void ChangeSpawn(string spawnRate, string maxSpawn, Player player)
@@ -70,7 +83,11 @@ public class CheatCommand : ModCommand
 
     private static void ChangeInventoryItemModifier(int val, Player player)
     {
-        if (player.inventory[19] != null && val > 0) player.inventory[19].prefix = val;
+        if (player.inventory[19] != null && val > 0)
+        {
+            player.inventory[19].prefix = val;
+            player.inventory[19].Refresh(false);
+        }
     }
 
     private static void ChangeItemModifier(int val, Player player)

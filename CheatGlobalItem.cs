@@ -1,4 +1,7 @@
-﻿using Terraria;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -16,6 +19,13 @@ public class CheatGlobalItem : GlobalItem
             }
 
             item.useTime = 1;
+        }
+
+        if (item.fishingPole > 0)
+        {
+            item.useTime = 1;
+            item.useAnimation = 50;
+            item.fishingPole = 100;
         }
     }
 
@@ -35,10 +45,10 @@ public class CheatGlobalItem : GlobalItem
     {
         int sX = Player.tileTargetX;
         int sY = Player.tileTargetY;
-        int startX = sX - 5;
-        int endX = sX + 5;
+        int startX = sX - CheatConfig.shovelX;
+        int endX = sX + CheatConfig.shovelX;
 
-        int startY = sY - 9;
+        int startY = sY - CheatConfig.shovelY;
         int endY = sY + 1;
         for (int x = startX; x <= endX; ++x)
         {
@@ -60,6 +70,17 @@ public class CheatGlobalItem : GlobalItem
                 {
                     WorldGen.KillWall(x, y);
                 }
+            }
+        }
+    }
+
+    public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+    {
+        foreach (var tooltipLine in tooltips)
+        {
+            if (tooltipLine.Name.Equals("ItemName"))
+            {
+                tooltipLine.Text += $"  |  {item.netID}";
             }
         }
     }

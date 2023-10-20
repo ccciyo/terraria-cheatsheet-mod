@@ -8,4 +8,6 @@ public static class CheatConfig
     public static float SpawnRateMultiplier = 1;
     public static float MaxSpawnsMultiplier = 1;
     public static bool canShovelKillWall = false;
+    public static int shovelX = 4;
+    public static int shovelY = 8;
 }

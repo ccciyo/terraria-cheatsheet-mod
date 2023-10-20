@@ -3,15 +3,15 @@
 commands:
 
 /cheat modifier 65 Warding
-/cheat modifier 57 Ruthless
 /cheat modifier 72 Menacing
 /cheat modifier 80 Violent
 
-/cheat modifier-i 59   Godly
-/cheat modifier-i 81   Legendary
-/cheat modifier-i 83   Mythical
+/cheat modifier-i 57    Ruthless
+/cheat modifier-i 59    Godly
+/cheat modifier-i 81    Legendary
+/cheat modifier-i 83    Mythical
 
-/cheat id 4711
+/cheat id 4263
 
 
 /cheat time 60
@@ -19,6 +19,12 @@ commands:
 /cheat stack 900
 
 /cheat spawn 1 1
-/cheat spawn 0.2 2
+/cheat spawn 0.1 5
 
 /cheat wall 1
+
+/cheat shovel 10 10
+
+/cheat shovel 5 10
+
+
